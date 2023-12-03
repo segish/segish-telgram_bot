@@ -3,7 +3,7 @@ const axios = require('axios');
 const TelegramBot = require('node-telegram-bot-api');
 require("dotenv").config();
 
-const bot = new TelegramBot(process.env.TOKEN, { polling: true });
+const bot = new TelegramBot('6852562057: AAGC9OGNHyMUICp9UwoE7GKlGSXRUqAevMg', { polling: true });
 
 bot.on('message', async (msg) => {
     const chatId = msg.chat.id;
@@ -18,6 +18,10 @@ bot.on('message', async (msg) => {
 
 const app = express();
 const port = 3000;
+
+app.get('/', (req, res) => {
+    res.send('Hello, this is a test route!');
+});
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
